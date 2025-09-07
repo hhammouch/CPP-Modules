@@ -47,8 +47,8 @@ void PhoneBook::AddInput(void)
 		} while (input.empty());
 		newContact.setDarkestSecret(input);
 
-		int i = contactsNbr % 8;
-		contacts[i] = newContact;
+		int index = contactsNbr % 8;
+		contacts[index] = newContact;
 		contactsNbr++;
 		
 		std::cout << "Contact added successfully!" << std::endl;
@@ -106,7 +106,7 @@ void PhoneBook::searchInput()
 		}
 		else
 			std::cout << "Invalid input. Please enter a single digit." << std::endl;
-	} while (true);
+	} while (1);
 
 	Contact c = contacts[index];
 	std::cout << "First Name: " << c.getFirstName() << std::endl;
